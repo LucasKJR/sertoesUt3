@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competitors</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9ecef; /* Cor de fundo suave */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            background: #ffffff; /* Fundo branco */
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            box-sizing: border-box;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #343a40; /* Título em tom de cinza escuro */
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            table-layout: auto;
+            background-color: #f8f9fa; /* Cor de fundo da tabela */
+        }
+
+        table, th, td {
+            border: 1px solid #dee2e6; /* Cor da borda */
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            word-wrap: break-word;
+        }
+
+        th {
+            background-color: #007bff; /* Cabeçalho em azul */
+            color: #ffffff; /* Texto branco */
+        }
+
+        tr:nth-child(even) {
+            background-color: #e2e6ea; /* Cor de fundo das linhas pares */
+        }
+
+        tr:nth-child(odd) {
+            background-color: #f8f9fa; /* Cor de fundo das linhas ímpares */
+        }
+
+        tr:hover {
+            background-color: #d6d8db; /* Efeito hover cinza claro */
+        }
+
+        .footer {
+            text-align: center;
+            color: #6c757d; /* Texto de rodapé em cinza */
+        }
+
+        @media (max-width: 768px) {
+            th, td {
+                padding: 8px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            th, td {
+                padding: 6px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Competidores</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Posição</th>
+                    <th>Nome</th>
+                    <th>Time</th>
+                    <th>Gap</th>
+                    <th>Diferença do Líder</th>
+                    <th>Categoria</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for competitor in competitors %}
+                <tr>
+                    <td>{{ competitor['posicao'] }}</td>
+                    <td>{{ competitor['nome'] }}</td>
+                    <td>{{ competitor['time'] }}</td>
+                    <td>{{ competitor['Gap'] }}</td>
+                    <td>{{ competitor['difLider'] }}</td>
+                    <td>{{ competitor['categoria'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="footer">
+            <p>&copy; 2024 Sertoes Resultados. Todos os direitos reservados.</p>
+        </div>
+    </div>
+</body>
+</html>
